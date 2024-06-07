@@ -3,6 +3,7 @@
     Fabric script that creates and distributes an archive
     on my web servers, using deploy function
 """
+from fabric import task
 from fabric.api import *
 from fabric.operations import run, put, sudo, local
 from datetime import datetime
@@ -11,7 +12,7 @@ import os
 env.hosts = ['66.70.184.249', '54.210.138.75']
 created_path = None
 
-
+@task
 def do_pack():
     """
         generates a .tgz archine from contents of web_static
@@ -26,7 +27,7 @@ def do_pack():
     except:
         return None
 
-
+@task
 def do_deploy(archive_path):
     """
         using fabric to distribute archive
@@ -53,7 +54,7 @@ def do_deploy(archive_path):
     except:
         return False
 
-
+@task
 def deploy():
     """
         deploy function that creates/distributes an archive
