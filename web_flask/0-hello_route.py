@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Starts a Flask web application"""
 
 
 if __name__ == "__main__":
