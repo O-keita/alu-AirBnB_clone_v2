@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-    Fabric script that distributes an archive to my web servers
+    Fabric scriptt that distributes an archive to my web servers
 """
 from fabric.api import *
 from fabric.operations import run, put, sudo
