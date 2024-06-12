@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """Starts a Flask web application"""
-from flask import Flask, redirect, url_for, render_template
-app = Flask(__name__)
 from models import storage
 from models.state import State
+from flask import Flask, redirect, url_for, render_template
+app = Flask(__name__)
 
 
 @app.route('/', strict_slashes=False)
@@ -62,7 +62,7 @@ def states_list():
 
 @app.teardown_appcontext
 def teardown_db(exception):
-    """Closes the storage on teardown""" 
+    """Closes the storage on teardown"""
 
     storage.close()
 
