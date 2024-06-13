@@ -1,12 +1,15 @@
 #!/usr/bin/python3
 """Starts a Flask web application"""
 from models import storage
-import os, sys
+import os
+import sys
 from models import *
 from flask import Flask, redirect, url_for, render_template
 app = Flask(__name__)
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../')
+
+
 @app.route('/', strict_slashes=False)
 def hello():
     """function that returns Hello HBNB!"""
